@@ -1,0 +1,5 @@
+<button mat-button (click)="onNoClick()">CLOSE</button>
+<div style="height: 500px;overflow-y: auto;">
+  <pdf-viewer id="pdfviewer" (page-rendered)="pageRendered
+($event)" data-page-number [stick-to-page]="true" [page]="data.currentPage" #pdfviewer (pageChange)="onProgress($event)" [src]="pdfSrc" [render-text]="true" [show-all]="false"></pdf-viewer>
+</div>

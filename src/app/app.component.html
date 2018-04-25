@@ -1,0 +1,9 @@
+<div style="display: block;">
+  <button mat-raised-button color="primary" (click)="onPrevPage()">PREV PAGE</button>
+  <button mat-raised-button color="primary" (click)="onNextPage()">NEXT PAGE</button>
+  <mat-slide-toggle style="padding-left: 10px;" color="primary" [checked]="showSuplPages" [(ngModel)]="showSuplPages">Show Supplementary Pages</mat-slide-toggle>
+</div>
+<div style="border: 1px solid;overflow-y:auto;height: 700px;">
+  <pdf-viewer id="pdfviewer" (page-rendered)="pageRendered
+($event)" data-page-number [stick-to-page]="true" [page]="pageNumber" #pdfviewer (pageChange)="onProgress($event)" [src]="pdfSrc" [render-text]="true" [show-all]="false"></pdf-viewer>
+</div>
